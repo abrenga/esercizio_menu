@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title":"Spaghetti e vongole",
+        "prezzo": "15,00",
+        "image": "url(imags/spaghetti_vongole.jpg)"
+    },
+    {
+        "id": 2,
+        "title": "Gnocchi alla sorrentina",
+        "prezzo": "9,00",
+        "image": "url(imags/pasta_sorrentina.jfif)"
+    },
+    {
+        "id": 3,
+        "title": "Pasta al pesto",
+        "prezzo": "8,00",
+        "image": "url(imags/pasta_pesto.jfif)"
+    },
+    {
+        "id": 4,
+        "title": "Bistecca alla griglia",
+        "prezzo": "12,50",
+        "image": "url(imags/bistecca_alla_griglia.jpg)"
+    },
+    {
+        "id": 5,
+        "title": "Pollo ai ferri",
+        "prezzo": "8,50",
+        "image": "url(imags/pollo_alla_griglia.jfif)"
+    },
+    {
+        "id": 6,
+        "title": "Salmone alla griglia",
+        "prezzo": "18,00",
+        "image": "url(imags/salmone-alla-griglia.jpg)"
+    },
+    {
+        "id": 7,
+        "title": "Hamburger e patatine",
+        "prezzo": "7,50",
+        "image": "url(imags/hamburger_patatine.jpg)"
+    },
+    {
+        "id": 8,
+        "title": "Toast al formaggio",
+        "prezzo": "5,00",
+        "image": "url(imags/toast_formaggio.jfif)"
+    },
+    {
+        "id": 9,
+        "title": "TPanino pistacchio e salame",
+        "prezzo": "6,00",
+        "image": "url(imags/02-panino-salame-miele-e-noci.jpg)"
+    }
+    
+]

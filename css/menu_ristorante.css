@@ -1,0 +1,60 @@
+
+
+
+img{
+   width: 150px; 
+}
+
+.section-center {
+    width: 907px;
+    display: flex;
+    margin: 0 auto;
+    padding: 0!important;
+
+}
+
+.title{
+    text-align: center;
+}
+
+.my-box {
+    display: flex;
+    padding: 10px;
+
+    
+    
+}
+
+.item-info {
+    background-color: rgb(241, 240, 240);
+    border: 1px solid rgb(37, 37, 37);
+    
+}
+
+.contenitore{
+    display: flex;
+    margin: 10px; 
+    
+    
+}
+h4{
+    width: 70%;
+    text-align: left;
+}
+
+h5{
+    width: 30%;
+   text-align: right;
+}
+
+
+
+.menu{
+    width: 1220px;
+    margin: 0 auto;
+    
+}
+
+.text{
+    padding: 10px;
+}
