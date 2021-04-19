@@ -20,6 +20,7 @@ img{
 .my-box {
     display: flex;
     padding: 10px;
+    width: 40%;
 
     
     
@@ -28,15 +29,13 @@ img{
 .item-info {
     background-color: rgb(241, 240, 240);
     border: 1px solid rgb(37, 37, 37);
-    
 }
 
 .contenitore{
     display: flex;
-    margin: 10px; 
-    
-    
+    margin: 10px;    
 }
+
 h4{
     width: 70%;
     text-align: left;

@@ -1,57 +1,66 @@
 [
     {
-        "id": 1,
+        "tags": "primi",
         "title":"Spaghetti e vongole",
         "prezzo": "15,00",
-        "image": "url(imags/spaghetti_vongole.jpg)"
+        "image": "imags/spaghetti_vongole.jpg",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 2,
+        "tags": "primi",
         "title": "Gnocchi alla sorrentina",
         "prezzo": "9,00",
-        "image": "url(imags/pasta_sorrentina.jfif)"
+        "image": "imags/pasta_sorrentina.jfif",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 3,
+        "tags": "primi",
         "title": "Pasta al pesto",
         "prezzo": "8,00",
-        "image": "url(imags/pasta_pesto.jfif)"
+        "image": "imags/pasta_pesto.jfif",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 4,
+        "tags": "secondi",
         "title": "Bistecca alla griglia",
         "prezzo": "12,50",
-        "image": "url(imags/bistecca_alla_griglia.jpg)"
+        "image": "imags/bistecca_alla_griglia.jpg",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 5,
+        "tags": "secondi",
         "title": "Pollo ai ferri",
         "prezzo": "8,50",
-        "image": "url(imags/pollo_alla_griglia.jfif)"
+        "image": "imags/pollo_alla_griglia.jfif",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 6,
+        "tags":"secondi",
         "title": "Salmone alla griglia",
         "prezzo": "18,00",
-        "image": "url(imags/salmone-alla-griglia.jpg)"
+        "image": "imags/salmone-alla-griglia.jpg",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 7,
+        "tags": "panino",
         "title": "Hamburger e patatine",
         "prezzo": "7,50",
-        "image": "url(imags/hamburger_patatine.jpg)"
+        "image": "imags/hamburger_patatine.jpg",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 8,
+        "tags": "panino",
         "title": "Toast al formaggio",
         "prezzo": "5,00",
-        "image": "url(imags/toast_formaggio.jfif)"
+        "image": "imags/toast_formaggio.jfif",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "id": 9,
-        "title": "TPanino pistacchio e salame",
-        "prezzo": "6,00",
-        "image": "url(imags/02-panino-salame-miele-e-noci.jpg)"
+        "tags": "panino",
+        "title": "Panino pistacchio e salame",
+        "prezzo": "$ 6,00",
+        "image": "imags/02-panino-salame-miele-e-noci.jpg",
+        "text" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     }
     
 ]
