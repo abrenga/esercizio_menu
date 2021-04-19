@@ -58,3 +58,14 @@ h5{
 .text{
     padding: 10px;
 }
+
+.Categorie {
+    display: flex;
+    margin: 0 auto;
+    width: 221px;
+}
+
+.btn-m{
+    margin: 5px;
+}
+
