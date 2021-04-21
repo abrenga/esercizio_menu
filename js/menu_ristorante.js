@@ -1,6 +1,7 @@
 /* */
 let contenitoreHtml = document.getElementById("daje");
 let btnS = document.querySelectorAll(".btn-m");
+const SelezionatiPiatti = document.getElementById("ola")
 
 
 var arrayPiatti = [];
@@ -41,14 +42,18 @@ var menu = {
     },
 
     ascoltaLevento: function () {
+        const articles = document.querySelectorAll(".article");
         btnS.forEach(btn => {
             btn.addEventListener("click", function () {
                 if (btn.classList.contains("01")) {
-                    const article = document.getElementById("article");
-                    if(article.classList.contains("primi")){
-                        const ola = document.getElementById("ola");
-                        ola.innerHTML =+ article;
-                    }
+                    articles.forEach(article => {
+                        if (arrayPiatti.piatto.tags!=="primi") {
+                            article.classList.add("hide");
+                        }
+                    })
+
+
+
 
                 }
 
