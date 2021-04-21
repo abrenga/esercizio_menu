@@ -4,8 +4,6 @@ let btnS = document.querySelectorAll(".btn-m");
 const SelezionatiPiatti = document.getElementById("ola")
 
 
-
-
 var arrayPiatti = [];
 
 var menu = {
@@ -31,7 +29,7 @@ var menu = {
 
 
     creaPiattoHtml: function (item) {
-        return `<article id="article" class="${item.tags} article col-6 my-box">
+        return `<article id="article" class="${item.tags} col-6 my-box">
                     <img src="${item.image}" alt="">
                     <div class="item-info">
                         <header class="contenitore">
@@ -45,20 +43,18 @@ var menu = {
 
     ascoltaLevento: function () {
         const articles = document.querySelectorAll(".article");
-        let slug = this
         btnS.forEach(btn => {
             btn.addEventListener("click", function () {
                 if (btn.classList.contains("01")) {
-                    slug.selezionaPrimi(articles)
+                    articles.forEach(article => {
+                        if (arrayPiatti.piatto.tags!=="primi") {
+                            article.classList.add("hide");
+                        }
+                    })
 
 
-                }
-                if (btn.classList.contains("02")) {
-                    slug.selezionaSecondi(articles);
 
-                }
-                if (btn.classList.contains("03")) {
-                    slug.selezionaPanini(articles);
+
                 }
 
 
@@ -68,46 +64,12 @@ var menu = {
     },
 
 
-    selezionaPrimi: function (articles) {
-
-        articles.forEach(article => {
-            article.classList.remove("hide")
-            if (!article.classList.contains("primi")) {
-                article.classList.toggle("hide");
-            }
-            
-        })
-
-    },
-
-
-    selezionaSecondi: function (articles) {
-        
-        articles.forEach(article => {
-            article.classList.remove("hide")
-            if (!article.classList.contains("secondi")) {
-                article.classList.toggle("hide");
-
-            }
-        })
 
 
 
 
-    },
 
 
-    selezionaPanini: function (articles) {
-        articles.forEach(article => {
-            article.classList.remove("hide")
-            if (!article.classList.contains("panino")) {
-                article.classList.toggle("hide");
-
-            }
-        })
-
-
-    }
 }
 
 
