@@ -53,19 +53,19 @@ var menu = {
 
                
                 if (btn.classList.contains("01")) {
-                    slug.selezionaPrimi(articles)
-                    slug.resetAll(articles)
+                    slug.selezionaPrimi(articles);
+                    
 
 
                 }
                 if (btn.classList.contains("02")) {
                     slug.selezionaSecondi(articles);
-                    slug.resetAll(articles)
+                        
 
                 }
                 if (btn.classList.contains("03")) {
                     slug.selezionaPanini(articles);
-                    slug.resetAll(articles)
+                    
                 }
 
 
@@ -79,7 +79,7 @@ var menu = {
         articles.forEach(article => {
 
             if (!article.classList.contains("primi")) {
-                article.classList.toggle("hide");
+                article.classList.add("hide");
             } else {
                 article.classList.remove("hide");
             }
@@ -94,7 +94,7 @@ var menu = {
         articles.forEach(article => {
 
             if (!article.classList.contains("secondi")) {
-                article.classList.toggle("hide");
+                article.classList.add("hide");
 
             } else {
                 article.classList.remove("hide")
@@ -110,7 +110,7 @@ var menu = {
             
 
             if (!article.classList.contains("panino")) {
-                article.classList.toggle("hide");
+                article.classList.add("hide");
 
             } else {
                 article.classList.remove("hide")
