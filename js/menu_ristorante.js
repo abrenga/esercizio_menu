@@ -26,6 +26,7 @@ var menu = {
 
         });
         this.ascoltaLevento();
+        this.selezionaPiatto()
 
     },
 
@@ -48,17 +49,23 @@ var menu = {
         let slug = this
         btnS.forEach(btn => {
             btn.addEventListener("click", function () {
+
+
+               
                 if (btn.classList.contains("01")) {
                     slug.selezionaPrimi(articles)
+                    slug.resetAll(articles)
 
 
                 }
                 if (btn.classList.contains("02")) {
                     slug.selezionaSecondi(articles);
+                    slug.resetAll(articles)
 
                 }
                 if (btn.classList.contains("03")) {
                     slug.selezionaPanini(articles);
+                    slug.resetAll(articles)
                 }
 
 
@@ -70,22 +77,22 @@ var menu = {
     selezionaPrimi: function (articles) {
 
         articles.forEach(article => {
-            
+
             if (!article.classList.contains("primi")) {
-                article.classList.toggle("hide");                
+                article.classList.toggle("hide");
             } else {
                 article.classList.remove("hide");
             }
-            
+
         })
 
     },
 
 
     selezionaSecondi: function (articles) {
-        
+
         articles.forEach(article => {
-            
+
             if (!article.classList.contains("secondi")) {
                 article.classList.toggle("hide");
 
@@ -95,14 +102,13 @@ var menu = {
         })
 
 
-
-
     },
 
 
     selezionaPanini: function (articles) {
         articles.forEach(article => {
             
+
             if (!article.classList.contains("panino")) {
                 article.classList.toggle("hide");
 
@@ -114,7 +120,13 @@ var menu = {
 
     },
 
-    
+    resetAll : function() {
+
+    },
+
+  
+
+
 }
 
 
