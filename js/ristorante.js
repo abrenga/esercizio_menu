@@ -4,55 +4,50 @@ class Menu {
         this.dishes = [];
     }
 
-    addDishes(dish) {
+
+    addDish(dish) {
+
         this.dishes.push(dish);
     }
 
+    showDishes(container) {
 
-    showMenu(container) {
+        this.dishes.forEach(dish => {
 
-        container.innerHtml = "";
-
-        container.innerHtml =+ Menu.creaPiattoHTML(dish);
+            container.innerHTML += this.initHtml(dish);
+        });
 
     }
-    
-    creaPiattoHTML(dish){
-        return `<article id="article" class="${dish.tag} article col-6 my-box">
-                    <img src="${dish.image}" alt="">
+
+    initHtml(item) {
+        return `<article id="article" class="${item.tag} article col-6 my-box">
+                    <img src="${item.image}" alt="">
                     <div class="item-info">
                         <header class="contenitore">
-                            <h4>${dish.title}</h4>
-                            <h5 class="price">${dish.price}</h5>
-                        </header>
-                        <p class="text">${dish.text}</p>
+                            <h4>${item.title}</h4>
+                            <h5 class="price">${item.price}</h5>
+                        </header>   
                     </div>
                 </article>`;
-
     }
 
+
+
 }
-
-
 
 class Dish {
-    constructor(image, title, price, tag) {
-        this.image = image,
-            this.title = title,
-            this.price = price,
-            this.tag = tag
+    constructor(image, title, price) {
+        this.image = image;
+        this.title = title;
+        this.price = price;
+     }
     }
-
-
-}
-
-
 
 async function getMenu() {
     let response = await fetch("file.json");
     let dishes = await response.json();
 
-    let menu = new Menu;
+    let menu = new Menu();
 
     dishes.forEach(dish => {
 
@@ -66,7 +61,6 @@ async function getMenu() {
 }
 
 
-let container = document.getElementById("container")
 
-getMenu().then();
-
+const node = document.getElementById("daje");
+getMenu().then(menu => menu.showDishes(node));

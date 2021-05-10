@@ -79,6 +79,8 @@ const container = document.getElementById("container");
 const filter1 = new Filter("Primo");
 const filter2 = new Filter("Secondo");
 
+
+
 menu.addFilter(filter1);
 menu.addFilter(filter2);
 
