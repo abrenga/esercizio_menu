@@ -2,16 +2,33 @@ class Menu {
 
     constructor() {
         this.dishes = [];
-<<<<<<< HEAD
-=======
     }
->>>>>>> 48ba85947fc7162bab6f2e748b7fcf1e06655d47
 
-    }
-    addDishes(dish) {
+
+    addDish(dish) {
+
         this.dishes.push(dish);
-<<<<<<< HEAD
+    }
 
+    showDishes(container) {
+
+        this.dishes.forEach(dish => {
+
+            container.innerHTML += this.initHtml(dish);
+        });
+
+    }
+
+    initHtml(item) {
+        return `<article id="article" class="${item.tag} article col-6 my-box">
+                    <img src="${item.image}" alt="">
+                    <div class="item-info">
+                        <header class="contenitore">
+                            <h4>${item.title}</h4>
+                            <h5 class="price">${item.price}</h5>
+                        </header>   
+                    </div>
+                </article>`;
     }
 
 
@@ -24,39 +41,23 @@ class Dish {
         this.title = title;
         this.price = price;
     }
-=======
-    }
-
-
-
-}
-
-class Dish {
-    constructor(image, title, price, tag) {
-        this.image = image,
-        this.title = title,
-        this.price = price,
-        this.tag = tag
-    }
-
-
-    async getMenu() {
-        let response = await fetch("file.json");
-        let dish = await response.json();
-        return dish
-
-    
-        
-    }
 
 }
 
 
-var menu = new Menu();
+async function getMenu() {
+    let response = await fetch('file.json');
+    let dishes = await response.json();
+    let menu = new Menu();
+    dishes.forEach(dish => {
+        menu.addDish(new Dish(dish.image, dish.title, dish.price));
+    });
+
+    console.log(menu);
+    return menu;
+}
 
 
-menu.addDishes(new Dish("", "ciao", "ciao", "ciao"));
 
->>>>>>> 48ba85947fc7162bab6f2e748b7fcf1e06655d47
-
-console.log(menu)
+const node = document.getElementById("daje");
+getMenu().then(menu => menu.showDishes(node));
