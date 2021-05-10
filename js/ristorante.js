@@ -20,7 +20,7 @@ class Menu {
     }
 
     initHtml(item) {
-        return `<article id="article" class="${item.tag} article col-6 my-box">
+        return `<article id="article" class="${item.tag} article col my-box">
                     <img src="${item.image}" alt="">
                     <div class="item-info">
                         <header class="contenitore">
@@ -36,31 +36,32 @@ class Menu {
 }
 
 class Dish {
-    constructor(image, title, price) {
+    constructor(image, title, price, tag) {
         this.image = image;
         this.title = title;
         this.price = price;
-     }
+        this.tag = tag;
     }
+
+}
 
 async function getMenu() {
     let response = await fetch("file.json");
     let dishes = await response.json();
 
     let menu = new Menu();
-
     dishes.forEach(dish => {
 
-        menu.addDishes(new Dish(dish.image, dish.title, dish.price, dish.tag));
+        menu.addDish(new Dish(dish.image, dish.title, dish.price, dish.tag));
 
     });
 
-    
-    menu.showMenu(container);
+
+    menu.showDishes(node);
 
 }
 
 
 
 const node = document.getElementById("daje");
-getMenu().then(menu => menu.showDishes(node));
+

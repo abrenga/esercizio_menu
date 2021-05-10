@@ -32,7 +32,7 @@ var menu = {
 
 
     creaPiattoHtml: function (item) {
-        return `<article id="article" class="${item.tags} article col-6 my-box">
+        return `<article id="article" class="${item.tags} article col my-box">
                     <img src="${item.image}" alt="">
                     <div class="item-info">
                         <header class="contenitore">
