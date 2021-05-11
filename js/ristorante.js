@@ -14,18 +14,14 @@ class Menu {
 
     showDishes(container) {
 
+
         this.dishes.forEach(dish => {
             container.innerHTML += dish.initHtml();
         });
     }
 
-
-    showDishesFilter() {
-        for (let i = 0; i <= this.filters; i++) {
-            let filter = filters[i];
-            let canShow = this.
-
-        }
+    isFilterPassed() {
+        
     }
 }
 
