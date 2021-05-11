@@ -28,10 +28,10 @@ class Dish {
         this.tag = tag;
     }
 
-    show() {
-        return `<article id="article" class="${this.tag} col-md-6 my-box">
-                    <img src="${this.image}" alt="">
-                    <div class="item">
+    initHtml(item) {
+        return `<article id="article" class="${item.tag} article col my-box">
+                    <img src="${item.image}" alt="">
+                    <div class="item-info">
                         <header class="contenitore">
                             <h4>${this.title}</h4>
                             <h5 class="price">${this.price}</h5>
@@ -49,20 +49,24 @@ class Filter {
 
 }
 
-
 async function getMenu() {
-    let response = await fetch('file.json');
+    let response = await fetch("file.json");
     let dishes = await response.json();
+
     let menu = new Menu();
     dishes.forEach(dish => {
+
         menu.addDish(new Dish(dish.image, dish.title, dish.price, dish.tag));
+
     });
 
 
-    return menu;
+    menu.showDishes(node);
+
 }
 
 
 
 const node = document.getElementById("daje");
-getMenu().then(menu => menu.showDishes(node));
+
+
