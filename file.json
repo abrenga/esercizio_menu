@@ -58,7 +58,7 @@
     {
         "tag": "panino",
         "title": "Panino pistacchio e salame",
-        "price": "$ 6,00",
+        "price": "6,00",
         "image": "imags/02-panino-salame-miele-e-noci.jpg",
         "text" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     }

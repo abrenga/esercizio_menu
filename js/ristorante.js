@@ -1,45 +1,50 @@
 class Menu {
-
     constructor() {
         this.dishes = [];
+        this.filters = [];
     }
 
-
     addDish(dish) {
-
         this.dishes.push(dish);
     }
 
-    showDishes(container) {
-
-        this.dishes.forEach(dish => {
-
-            container.innerHTML += this.initHtml(dish);
-        });
-
+    addFilter(filter) {
+        this.filters.push(filter);
     }
 
-    initHtml(item) {
-        return `<article id="article" class="${item.tag} article col-6 my-box">
-                    <img src="${item.image}" alt="">
-                    <div class="item-info">
+    showDishes(container) {
+        
+        this.dishes.forEach(dish => {
+            container.innerHTML += dish.show();
+        });
+    }
+}
+
+class Dish {
+    constructor(image, title, price, tag) {
+        this.image = image;
+        this.title = title;
+        this.price = price;
+        this.tag = tag;
+    }
+
+    show() {
+        return `<article id="article" class="${this.tag} col-md-6 my-box">
+                    <img src="${this.image}" alt="">
+                    <div class="item">
                         <header class="contenitore">
-                            <h4>${item.title}</h4>
-                            <h5 class="price">${item.price}</h5>
+                            <h4>${this.title}</h4>
+                            <h5 class="price">${this.price}</h5>
                         </header>   
                     </div>
                 </article>`;
     }
 
-
-
 }
 
-class Dish {
-    constructor(image, title, price) {
-        this.image = image;
-        this.title = title;
-        this.price = price;
+class Filter {
+    constructor(tag) {
+        this.tag = tag;
     }
 
 }
@@ -50,10 +55,10 @@ async function getMenu() {
     let dishes = await response.json();
     let menu = new Menu();
     dishes.forEach(dish => {
-        menu.addDish(new Dish(dish.image, dish.title, dish.price));
+        menu.addDish(new Dish(dish.image, dish.title, dish.price, dish.tag));
     });
 
-    console.log(menu);
+
     return menu;
 }
 
