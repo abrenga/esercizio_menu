@@ -14,14 +14,33 @@ class Menu {
 
     showDishes(container) {
 
+        container.innerHTML = "";
+        const filters = this.filters;
 
         this.dishes.forEach(dish => {
-            container.innerHTML += dish.initHtml();
+            let canShow = true;
+
+            for (let i = 0; i < filters.length; i++) {
+                const filter = filters[i];
+                canShow = dish.isFilterPassed(filter);
+
+                if (canShow)
+                    break;
+            }
+
+            if (canShow) {
+                container.innerHTML += dish.initHtml();
+            }
+
         });
     }
 
-    isFilterPassed() {
-        
+    isFilterPassed(filter) {
+        if (this.tag != filter.tag) {
+            return false;
+        }
+
+        return true;
     }
 }
 
