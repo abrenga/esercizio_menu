@@ -36,6 +36,8 @@ class Menu {
     }
 
     isFilterPassed(filter) {
+
+
         if (this.tag != filter.tag) {
             return false;
         }
@@ -67,11 +69,16 @@ class Dish {
 
 
     isFilterPassed(filter) {
-        if (this.tag != filter.tag) {
-            return false;
-        }
+        bottoms.forEach(btm => {
+            btm.addEventListener("click", function () {
+                if (this.tag != filter.tag) {
+                    return false;
+                }
 
-        return true;
+                return true;
+            })
+        })
+
     }
 
 }
@@ -100,6 +107,8 @@ async function getMenu() {
 }
 
 let menu = new Menu();
+
+const bottoms = document.querySelectorAll("btn-m");
 
 const node = document.getElementById("daje");
 
