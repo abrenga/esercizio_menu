@@ -35,14 +35,17 @@ class Menu {
         });
     }
 
-    isFilterPassed(filter) {
 
 
-        if (this.tag != filter.tag) {
-            return false;
-        }
+    isFilterPassed(filter) { 
+                if (btn.tag != filter.tag) {
+                    return false;
+                }
 
-        return true;
+                return true;
+
+
+
     }
 }
 
@@ -68,18 +71,6 @@ class Dish {
     }
 
 
-    isFilterPassed(filter) {
-        bottoms.forEach(btm => {
-            btm.addEventListener("click", function () {
-                if (this.tag != filter.tag) {
-                    return false;
-                }
-
-                return true;
-            })
-        })
-
-    }
 
 }
 
@@ -111,6 +102,11 @@ let menu = new Menu();
 const bottoms = document.querySelectorAll("btn-m");
 
 const node = document.getElementById("daje");
+
+
+
+
+
 
 
 getMenu().then();
