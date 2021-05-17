@@ -9,7 +9,36 @@ class Menu {
     }
 
     addFilter(filter) {
-        this.filters.push(filter);
+        if (!this.isFilterExisting(filter)) {
+            this.filters.push(filter);
+        }
+
+    }
+
+    resetFilter(filter) {
+        for (let i = 0; i < this.filters.length; i++) {
+            const currentFilter = this.filters[i];
+            if (filter.tag == currentFilter.tag) {
+                this.filters.splice(i, 1);
+                break;
+            }
+
+        }
+    }
+
+    resetAllFilters() {
+        this.filters.splice(0, this.filters.length);
+    }
+
+    isFilterExisting(filter) {
+        const filterResult = this.filters.filter(currentFilter => currentFilter.tag == filter.tag);
+
+        if (filterResult.length > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     showDishes(container) {
@@ -37,16 +66,6 @@ class Menu {
 
 
 
-    isFilterPassed(filter) { 
-                if (btn.tag != filter.tag) {
-                    return false;
-                }
-
-                return true;
-
-
-
-    }
 }
 
 class Dish {
@@ -55,6 +74,16 @@ class Dish {
         this.image = image;
         this.title = title;
         this.price = price;
+
+    }
+
+    isFilterPassed(filter) {
+        if (this.tag != filter.tag) {
+            return false;
+        }
+
+        return true;
+
 
     }
 
@@ -95,11 +124,40 @@ async function getMenu() {
 
     menu.showDishes(node);
 
+
+
+
+}
+
+
+function listeningEvent(buttons, menu, node) {
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            
+            const piccolo = btn.innerHTML.toLowerCase();
+
+            let filter = new Filter(piccolo);
+            if (!menu.isFilterExisting(filter)) {
+                menu.resetAllFilters();
+                menu.addFilter(filter);
+
+            } else {
+                menu.resetFilter(filter);
+                
+
+            }
+            menu.showDishes(node);
+            
+
+
+        });
+    });
+
 }
 
 let menu = new Menu();
 
-const bottoms = document.querySelectorAll("btn-m");
+const HTMLButtons = document.querySelectorAll(".btn-m");
 
 const node = document.getElementById("daje");
 
@@ -108,5 +166,6 @@ const node = document.getElementById("daje");
 
 
 
+listeningEvent(HTMLButtons, menu, node);
 
 getMenu().then();

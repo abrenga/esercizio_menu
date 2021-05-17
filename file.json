@@ -42,21 +42,21 @@
         "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "tag": "panino",
+        "tag": "panini",
         "title": "Hamburger e patatine",
         "price": "7,50",
         "image": "imags/hamburger_patatine.jpg",
         "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "tag": "panino",
+        "tag": "panini",
         "title": "Toast al formaggio",
         "price": "5,00",
         "image": "imags/toast_formaggio.jfif",
         "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sapiente placeat tempora."
     },
     {
-        "tag": "panino",
+        "tag": "panini",
         "title": "Panino pistacchio e salame",
         "price": "6,00",
         "image": "imags/02-panino-salame-miele-e-noci.jpg",
