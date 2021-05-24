@@ -53,14 +53,15 @@ class Menu {
                 const filter = filters[i];
                 canShow = dish.isFilterPassed(filter);
 
-                if (canShow)
+                if (canShow) {
                     break;
-            }
+                }
 
-            if (canShow) {
-                container.innerHTML += dish.initHtml();
-            }
+                if (canShow) {
+                    container.innerHTML += dish.initHtml();
+                }
 
+            }
         });
     }
 
@@ -133,7 +134,7 @@ async function getMenu() {
 function listeningEvent(buttons, menu, node) {
     buttons.forEach(btn => {
         btn.addEventListener("click", function () {
-            
+
             const piccolo = btn.innerHTML.toLowerCase();
 
             let filter = new Filter(piccolo);
@@ -143,11 +144,11 @@ function listeningEvent(buttons, menu, node) {
 
             } else {
                 menu.resetFilter(filter);
-                
+
 
             }
             menu.showDishes(node);
-            
+
 
 
         });

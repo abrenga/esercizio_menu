@@ -32,6 +32,10 @@ class Menu {
             }
         });
     }
+
+    isFilterPassed() {
+
+    }
 }
 
 class Dish {
